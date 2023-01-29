@@ -1,0 +1,77 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 offset-md-3">
+                <mat-card class="padding-10">
+                    <div class="container text-center logo">
+                        <img src="../../../assets/logo.png" alt="">
+                    </div>
+                    <h1 class="text-center">SignUp here..</h1>
+                    <!-- {{user | json}} -->
+
+                    <form action="#" (ngSubmit)="formSubmit()">
+                        <!-- user name field  -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>User Name</mat-label>
+                            <input required [(ngModel)]="user.username" type="text" name="username" matInput
+                                placeholder="Enter here">
+                            <mat-hint>Username must be unique.</mat-hint>
+                        </mat-form-field>
+
+                        <!--  password field  -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>User Password</mat-label>
+                            <input required [(ngModel)]="user.password" type="password" name="password" matInput
+                                placeholder="Enter here">
+                        </mat-form-field>
+
+                        <!--  First name field  -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>First Name</mat-label>
+                            <input required [(ngModel)]="user.firstName" type="text" name="firstName" matInput
+                                placeholder="Enter here">
+                            <!-- <input type="text" id="firstName" name="firstName" class="form-control" required minlength="4"
+                            [(ngModel)]="user.firstName" #name="ngModel" matInput placeholder="Enter here">
+                        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+                            <div *ngIf="name.errors?.['required']">
+                               First Name is required.
+                            </div>
+                            <div *ngIf="name.errors?.['minlength']">
+                               First  Name must be at least 4 characters long.
+                            </div>
+                        </div> -->
+                        </mat-form-field>
+
+                        <!--  Last name field  -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Last Name</mat-label>
+                            <input required [(ngModel)]="user.lastName" type="text" name="lastName" matInput
+                                placeholder="Enter here">
+                        </mat-form-field>
+
+                        <!--  Email  address field  -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input required [(ngModel)]="user.email" type="email" name="email" matInput
+                                placeholder="Enter here">
+                        </mat-form-field>
+
+                        <!--   Phone Number  field  -->
+                        <mat-form-field class="full-width" appearance="outline">
+                            <mat-label>Phone Number </mat-label>
+                            <input required [(ngModel)]="user.phone" type="number" name="phone" matInput
+                                placeholder="Enter here">
+                        </mat-form-field>
+
+                        <div class="container text-center">
+                            <button type="submit" mat-raised-button color="primary">Sign Up</button>
+                            <button type="reset" mat-raised-button class="ml-20" color="accent">Reset</button>
+                        </div>
+
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

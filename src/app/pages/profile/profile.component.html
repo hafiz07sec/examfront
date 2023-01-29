@@ -1,0 +1,51 @@
+<mat-card *ngIf="user">
+    <h1 class="ml-20">Your Profile details</h1>
+    <!-- {{user | json}} -->
+    <mat-card-content >
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <img class="profile-image"
+                        src="https://www.freeiconspng.com/uploads/user-icon-png-person-user-profile-icon-20.png"
+                        alt="Profile" />
+
+                    <h3 class="mt-10">{{user.firstName}}</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <!-- table details -->
+
+                        <table class="profile-table text-center">
+                            <tr>
+                                <td>Username</td>
+                                <td>{{user.username}}</td>
+                            </tr>
+                            <tr>
+                                <td>UserId</td>
+                                <td>EXAM-{{user.id}}</td>
+                            </tr>
+                            <tr *ngIf="user.phone">
+                                <td>Phone</td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>{{user.enabled? "Active":"Not Active"}}</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+
+    <div class="text-center mt-10 mb-10">
+        <button class="mr-20" color="primary" mat-raised-button >Update</button>
+        <button color="accent" mat-raised-button>SHARE</button>
+    </div>
+</mat-card>
